@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-SRCS =	src/ft_printf.c
+SRCS =	src/ft_printf.c src/ft_check_params.c
 
 OBJS = ${SRCS:.c=.o}
 
