@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/11 19:04:12 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/12 18:57:43 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,20 @@
 # define FT_PRINTF_H
 
 // Test
-#include <stdio.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
+# include "../libft/libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include "../libft/libft.h"
+typedef struct s_printf
+{
+	char	*str;
+	char	convers[255];
+	char	result[1000];
+}	t_printf;
 
-int ft_AddStringd(char *str, ...);
 int	ft_printf(const char *str, ...);
+int	ft_check_params(va_list arg, t_printf *ob_print, const char *str);
 
 #endif
