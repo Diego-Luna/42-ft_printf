@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/13 16:27:30 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/14 12:42:57 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_printf
 }	t_printf;
 
 int	ft_printf(const char *str, ...);
+int	ft_convert(va_list arg, t_printf *ob_print, const char *str);
 int	ft_check_params(va_list arg, t_printf *ob_print, const char *str);
 
 #endif

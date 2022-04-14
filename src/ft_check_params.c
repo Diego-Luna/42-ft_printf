@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 10:03:25 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/12 18:28:21 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/14 13:16:13 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ft_check_params(va_list arg, t_printf *ob_print, const char *str)
 
 	(void)arg;
 	num = ft_strchrall(str, '%', ob_print);
-	printf("--> Valor de num: %i\n", num);
+	printf("--> 1-> Valor de num: %i\n", num);
 	if (num < 0)
 	{
 		return (-1);
