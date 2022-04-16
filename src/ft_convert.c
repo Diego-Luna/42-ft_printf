@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/15 20:51:13 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/16 13:08:13 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,144 @@ void	ft_result_s(char	*arg, t_printf *ob_print)
 	int	i;
 
 	i = ft_strfind(ob_print->result, 0, '%');
-	printf("--> 2-> Valor de i = %i\n", i);
-	printf("--> 2-> Valor ob_print->result = %s\n", ob_print->result);
-	printf("--> 2-> Valor de arg = %s\n", arg);
 	ft_strtostrn(ob_print->result, arg, i);
-	printf("--> 2-> 2 Valor ob_print->result = %s\n", ob_print->result);
+	//printf("--> 2-> 1 El valor de ob_print->result:%s\n", ob_print->result);
 	ft_strtostrnn(ob_print->result, ob_print->str, \
 		ft_strlen(ob_print->result), i + 2);
-	printf("--> 2-> 3 Valor ob_print->result = %s\n", ob_print->result);
+	//printf("--> 2-> 2 El valor de ob_print->result:%s\n", ob_print->result);
+}
+
+void	ft_result_c(int arg, t_printf *ob_print)
+{
+	int	i;
+
+	i = ft_strfind(ob_print->result, 0, '%');
+	ob_print->result[i] = arg;
+	ob_print->result[i + 1] = '\0';
+	ft_strtostrnn(ob_print->result, ob_print->str, \
+		ft_strlen(ob_print->result), i + 2);
+	//printf("--> 2-> 1 El valor de ob_print->result:%s\n", ob_print->result);
+}
+
+void	ft_write(int n, char *str)
+{
+	int	leng;
+
+	n += 48;
+	leng = ft_strlen(str);
+	str[leng] = n;
+	str[leng + 1] = '\0';
+}
+
+void	ft_inttostr(int nb, char *str)
+{
+	if (nb <= -2147483648)
+	{
+		ft_inttostr(nb / 10, str);
+		ft_write(8, str);
+	}
+	else if (nb < 0)
+	{
+		ft_write(-3, str);
+		ft_inttostr(-nb, str);
+	}
+	else
+	{
+		if (nb > 9)
+		{
+			ft_inttostr(nb / 10, str);
+		}
+		ft_write(nb % 10, str);
+	}
+}
+
+void	ft_inttostrx(int nb, char *str, char *val)
+{
+	int	leng;
+
+	if (nb <= -2147483648)
+	{
+		ft_inttostrx(nb / ft_strlen(val), str, val);
+		ft_write(8, str);
+	}
+	else if (nb < 0)
+	{
+		ft_write(-3, str);
+		ft_inttostrx(-nb, str, val);
+	}
+	else
+	{
+		if (nb > 9)
+		{
+			ft_inttostrx(nb / ft_strlen(val), str, val);
+		}
+		leng = ft_strlen(str);
+		str[leng] = val[nb % ft_strlen(val)];
+		str[leng + 1] = '\0';
+	}
+}
+
+void	ft_inttostrn(unsigned int nb, char *str)
+{
+	if (nb > 9)
+	{
+		ft_inttostrn(nb / 10, str);
+	}
+	ft_write(nb % 10, str);
+}
+
+void	ft_result_di(int arg, t_printf *ob_print)
+{
+	int		i;
+	char	str[12];
+
+	str[0] = '\0';
+	ft_inttostr(arg, str);
+	//printf("---> 2-> El valor de str:%s\n", str);
+	//printf("---> 2-> 0 El valor de ob_print->result:%s\n", ob_print->result);
+	i = ft_strfind(ob_print->result, 0, '%');
+	//printf("---> 2-> El valor de i:%d\n", i);
+	ft_strtostrn(ob_print->result, str, i);
+	//printf("---> 2-> 1 El valor de ob_print->result:%s\n", ob_print->result);
+	ft_strtostrnn(ob_print->result, ob_print->str, \
+		ft_strlen(ob_print->result), i + 2);
+	//printf("---> 2-> 2 El valor de ob_print->result:%s\n", ob_print->result);
+}
+
+void	ft_result_u(unsigned int arg, t_printf *ob_print)
+{
+	int		i;
+	char	str[12];
+
+	str[0] = '\0';
+	ft_inttostrn(arg, str);
+	//printf("---> 2-> El valor de str:%s, arg: %u\n", str, arg);
+	//printf("---> 2-> 0 El valor de ob_print->result:%s\n", ob_print->result);
+	i = ft_strfind(ob_print->result, 0, '%');
+	//printf("---> 2-> El valor de i:%d\n", i);
+	ft_strtostrn(ob_print->result, str, i);
+	//printf("---> 2-> 1 El valor de ob_print->result:%s\n", ob_print->result);
+	ft_strtostrnn(ob_print->result, ob_print->str, \
+		ft_strlen(ob_print->result), i + 2);
+	//printf("---> 2-> 2 El valor de ob_print->result:%s\n", ob_print->result);
+}
+
+void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val)
+{
+	int		i;
+	char	str[12];
+
+	str[0] = '\0';
+	ft_inttostrx(arg, str, val);
+	//printf("---> 2-> El valor de str:%s, arg: %u\n", str, arg);
+	//printf("---> 2-> 0 El valor de ob_print->result:%s\n", ob_print->result);
+	i = ft_strfind(ob_print->result, 0, '%');
+	//printf("---> 2-> El valor de i:%d\n", i);
+	ft_strtostrn(ob_print->result, str, i);
+	//printf("---> 2-> 1 El valor de ob_print->result:%s\n", ob_print->result);
+	ft_strtostrnn(ob_print->result, ob_print->str, \
+		ft_strlen(ob_print->result), i + 2);
+	//printf("---> 2-> 2 El valor de ob_print->result:%s\n", ob_print->result);
 }
 
 int	ft_convert(va_list arg, t_printf *ob_print, const char *str)
@@ -99,12 +229,18 @@ int	ft_convert(va_list arg, t_printf *ob_print, const char *str)
 	while (ob_print->convers[i] && i < leng)
 	{
 		if (ob_print->convers[i] == 's')
-		{
 			ft_result_s(va_arg(arg, char *), ob_print);
-		}
-		printf("--> 2-> El valor de i: %i,--\n", i);
+		if (ob_print->convers[i] == 'c')
+			ft_result_c(va_arg(arg, int), ob_print);
+		if (ob_print->convers[i] == 'd' || ob_print->convers[i] == 'i')
+			ft_result_di(va_arg(arg, int), ob_print);
+		if (ob_print->convers[i] == 'u')
+			ft_result_u(va_arg(arg, unsigned int), ob_print);
+		if (ob_print->convers[i] == 'x')
+			ft_result_x(va_arg(arg, int), ob_print, "0123456789abcdef");
+		if (ob_print->convers[i] == 'X')
+			ft_result_x(va_arg(arg, int), ob_print, "0123456789ABCDEF");
 		i++;
 	}
-	printf("--> 2-> El ob_print->result: %s,--\n", ob_print->result);
 	return (1);
 }
