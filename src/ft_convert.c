@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/15 20:49:39 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/15 20:51:13 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@ int	ft_convert(va_list arg, t_printf *ob_print, const char *str)
 		printf("--> 2-> El valor de i: %i,--\n", i);
 		i++;
 	}
-	ft_result_s(va_arg(arg, char *), ob_print);
 	printf("--> 2-> El ob_print->result: %s,--\n", ob_print->result);
 	return (1);
 }
