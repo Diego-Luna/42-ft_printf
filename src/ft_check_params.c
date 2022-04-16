@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 10:03:25 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/14 13:16:13 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/15 20:47:19 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_add(t_printf *ob_print, char c)
 	i = ft_strlen(ob_print->convers);
 	ob_print->convers[i] = c;
 	ob_print->convers[i + 1] = '\0';
-	printf("-> El str:%s \n", ob_print->convers);
+	printf("-> 1-> El str:%s \n", ob_print->convers);
+	printf("-> 1-> El  leng:%zu \n", ft_strlen(ob_print->convers));
 }
 
 int	ft_check(char s)
