@@ -6,13 +6,12 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 10:03:25 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/16 12:41:02 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/18 17:52:46 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-	//ob_print.convers, "s", ft_strlen(ob_print.convers)
 void	ft_add(t_printf *ob_print, char c)
 {
 	size_t	i;
@@ -20,8 +19,6 @@ void	ft_add(t_printf *ob_print, char c)
 	i = ft_strlen(ob_print->convers);
 	ob_print->convers[i] = c;
 	ob_print->convers[i + 1] = '\0';
-	//printf("-> 1-> El str:%s \n", ob_print->convers);
-	//printf("-> 1-> El  leng:%zu \n", ft_strlen(ob_print->convers));
 }
 
 int	ft_check(char s)
@@ -70,7 +67,6 @@ int	ft_check_params(va_list arg, t_printf *ob_print, const char *str)
 		return (-1);
 	}
 	num = ft_strchrall(str, '%', ob_print);
-	//printf("--> 1-> Valor de num: %i\n", num);
 	if (num < 0)
 	{
 		return (-1);

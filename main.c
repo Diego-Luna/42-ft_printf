@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/16 12:48:40 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/18 17:52:03 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,7 @@
 
 int	main(void)
 {
-	ft_printf("\n ft_printf u |%x| \n", 42);
-	printf("\n printf u |%x| \n", 42);
-	printf("\n");
+	printf("\n **> printf |3|%d|4|%u|5|%x|6|%X|", 24, 12, 2022, 2222);
+	ft_printf("\n **> tf_ |3|%d|4|%u|5|%x|6|%X|", 24, 12, 2022, 2222);
 	return (0);
 }
-
-/*
-int	main(void)
-{
-	ft_printf("string ", "1", "2", "3");
-}
-*/

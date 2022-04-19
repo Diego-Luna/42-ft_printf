@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_2.c                                            :+:      :+:    :+:   */
+/*   ft_result_x.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/17 20:19:58 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 19:00:49 by diegofranci      ###   ########.fr       */
+/*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
+/*   Updated: 2022/04/18 19:07:22 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_strtostrn(char *str1, const char *str2, int start)
+void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
+	int counter)
 {
-	int	i;
+	int		i;
+	int		ii;
+	char	str[12];
 
 	i = 0;
-	while (str2[i])
+	ii = 0;
+	str[0] = '\0';
+	ft_inttostrx(arg, str, val);
+	i = ft_strfind(ob_print->result, 0, '%');
+	ft_strtostrn(ob_print->result, str, i);
+	i = 0;
+	while (counter >= 0)
 	{
-		str1[start] = str2[i];
-		start++;
-		i++;
+		i = ft_strfind(ob_print->str, i + ii, '%');
+		ii = 1;
+		counter--;
 	}
-	str1[start] = '\0';
-}
-
-void	ft_strtostrnn(char *str1, const char *str2, int start1, int start2 )
-{
-	while (str2[start2])
-	{
-		str1[start1] = str2[start2];
-		start1++;
-		start2++;
-	}
-	str1[start1] = '\0';
+	ft_strtostrnn(ob_print->result, ob_print->str, \
+		ft_strlen(ob_print->result), i + 2);
 }
