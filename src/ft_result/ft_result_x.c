@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 20:04:23 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/19 08:33:37 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,9 @@ void	ft_result_sign(t_printf *ob_print, int counter)
 	str[0] = '%';
 	str[1] = '\0';
 	ft_update_result(ob_print, str, counter);
+}
+
+void	ft_result_p(void *p, t_printf *ob_print, int counter)
+{
+	printf("\n--2> 0> %p\n", p);
 }

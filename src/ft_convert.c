@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 20:00:56 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/19 08:29:45 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	ft_convert(va_list arg, t_printf *ob_print, const char *str)
 			ft_result_x(va_arg(arg, int), ob_print, "0123456789ABCDEF", i);
 		if (ob_print->convers[i] == '%')
 			ft_result_sign(ob_print, i);
+		if (ob_print->convers[i] == 'p')
+			ft_result_p(va_arg(arg, void *), ob_print, i);
 		i++;
 	}
 	return (1);
