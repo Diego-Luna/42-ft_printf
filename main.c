@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 19:47:09 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/18 20:10:54 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	main(void)
 {
-	printf("\n**> printf |-|%c|-|%s|-|%i|-|%d|-|%u|-|%x|-|%X|\n", \
+	printf("\n**> printf |-|%c|-|%s|-|%i|-|%d|-|%u|-|%x|-|%X|-|%%|\n", \
 		'D', "Luna", 42, 24, 12, 2022, 2222);
-	ft_printf("\n**> tf_    |-|%c|-|%s|-|%i|-|%d|-|%u|-|%x|-|%X|\n", \
+	ft_printf("\n**> tf_    |-|%c|-|%s|-|%i|-|%d|-|%u|-|%x|-|%X|-|%%|", \
 		'D', "Luna", 42, 24, 12, 2022, 2222);
 	return (0);
 }

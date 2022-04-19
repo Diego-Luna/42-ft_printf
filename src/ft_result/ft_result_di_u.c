@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_result_x.c                                      :+:      :+:    :+:   */
+/*   ft_result_di_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 19:46:08 by diegofranci      ###   ########.fr       */
+/*   Created: 2022/04/18 19:06:25 by diegofranci       #+#    #+#             */
+/*   Updated: 2022/04/18 19:58:47 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
-	int counter)
+void	ft_result_di(int arg, t_printf *ob_print, int counter)
 {
 	char	str[12];
 
 	str[0] = '\0';
-	ft_inttostrx(arg, str, val);
+	ft_inttostr(arg, str);
+	ft_update_result(ob_print, str, counter);
+}
+
+void	ft_result_u(unsigned int arg, t_printf *ob_print, int counter)
+{
+	char	str[12];
+
+	str[0] = '\0';
+	ft_inttostrn(arg, str);
 	ft_update_result(ob_print, str, counter);
 }

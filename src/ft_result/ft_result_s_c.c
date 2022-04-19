@@ -6,11 +6,11 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:05:24 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 19:43:56 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/18 19:58:29 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 void	ft_result_s(char	*arg, t_printf *ob_print, int counter)
 {

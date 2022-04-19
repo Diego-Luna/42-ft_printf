@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 19:36:05 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/18 20:03:23 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		ft_convert(va_list arg, t_printf *ob_print, const char *str);
 int		ft_check_params(va_list arg, t_printf *ob_print, const char *str);
 
 // ft_result_
+void	ft_result_sign(t_printf *ob_print, int counter);
 void	ft_result_c(int arg, t_printf *ob_print, int counter);
 void	ft_result_di(int arg, t_printf *ob_print, int counter);
 void	ft_result_s(char	*arg, t_printf *ob_print, int counter);
