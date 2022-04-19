@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 19:09:57 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/18 19:36:05 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int		ft_check_params(va_list arg, t_printf *ob_print, const char *str);
 void	ft_result_c(int arg, t_printf *ob_print, int counter);
 void	ft_result_di(int arg, t_printf *ob_print, int counter);
 void	ft_result_s(char	*arg, t_printf *ob_print, int counter);
+void	ft_update_result(t_printf *ob_print, char *str, int counter);
 void	ft_result_u(unsigned int arg, t_printf *ob_print, int counter);
 void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
 	int counter);

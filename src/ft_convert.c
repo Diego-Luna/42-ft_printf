@@ -6,22 +6,39 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 19:08:06 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/18 19:33:49 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+void	ft_update_result(t_printf *ob_print, char *str, int counter)
+{
+	int	i;
+	int	ii;
+
+	i = 0;
+	i = ft_strfind(ob_print->result, 0, '%');
+	ft_strtostrn(ob_print->result, str, i);
+	i = 0;
+	while (counter >= 0)
+	{
+		i = ft_strfind(ob_print->str, i + ii, '%');
+		ii = 1;
+		counter--;
+	}
+	ft_strtostrnn(ob_print->result, ob_print->str, \
+		ft_strlen(ob_print->result), i + 2);
+}
+
 int	ft_convert(va_list arg, t_printf *ob_print, const char *str)
 {
 	int	i;
-	int	leng;
 
 	i = 0;
-	leng = ft_strlen(ob_print->convers);
 	ft_strtostr(ob_print->str, str);
 	ft_strtostr(ob_print->result, str);
-	while (ob_print->convers[i] && i < leng)
+	while (ob_print->convers[i])
 	{
 		if (ob_print->convers[i] == 's')
 			ft_result_s(va_arg(arg, char *), ob_print, i);

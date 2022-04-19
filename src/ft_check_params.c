@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 10:03:25 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 17:52:46 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/18 19:19:08 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,37 +73,3 @@ int	ft_check_params(va_list arg, t_printf *ob_print, const char *str)
 	}
 	return (1);
 }
-
-/*
-int AddStringd(char *str, ...)
-{
-  int i;
-  int ii;
-  va_list ptr1;
-  va_list ptr2;
-  char *stringValue;
-
-  va_start(ptr1, str);
-  va_copy(ptr2, ptr1);
-
-  i = 1;
-  stringValue = va_arg(ptr2, char *);
-  while (stringValue)
-  {
-    //printf("\n -->stringValue: %s", stringValue);
-    stringValue = va_arg(ptr2, char *);
-    i++;
-  }
-  ii = i;
-  while (ii > 1)
-  {
-    //printf("\n-> El valor de va_arg(ptr2, int): %s \n", va_arg(ptr1, char *));
-    ii--;
-  }
-  // Ending argument list traversal
-  va_end(ptr1);
-  va_end(ptr2);
-
-  return i;
-}
-*/
