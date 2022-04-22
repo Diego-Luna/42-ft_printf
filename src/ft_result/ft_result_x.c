@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/20 10:32:14 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/21 20:56:42 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,8 @@ void	ft_result_p(void *p, t_printf *ob_print, int counter)
 {
 	char	*p_char;
 
-	p_char = p;
+	p_char = &p;
 	test(&p);
 	printf("\n--2> 0> p: %p\n", p);
 	printf("\n--2> 0> d: %p\n", &p_char);
-	printf("\n--2> 0> convers: %s\n", ob_print->convers);
-	printf("\n--2> 0> counter: %d\n", counter);
 }
