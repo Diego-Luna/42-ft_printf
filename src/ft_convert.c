@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/26 10:15:49 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/26 10:19:28 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,12 @@ void	ft_update_result(t_printf *ob_print, char *str, int counter)
 		ft_strlen(ob_print->result), i + 2);
 }
 
-int	ft_convert(va_list arg, t_printf *ob_print, const char *str)
+//int	ft_convert(va_list arg, t_printf *ob_print, const char *str)
+int	ft_convert(va_list arg, t_printf *ob_print)
 {
 	int	i;
 
 	i = 0;
-	ft_strtostr(ob_print->str, str);
-	ft_strtostr(ob_print->result, str);
 	while (ob_print->convers[i])
 	{
 		if (ob_print->convers[i] == 's')
