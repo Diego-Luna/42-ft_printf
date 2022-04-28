@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:17:36 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/26 10:15:42 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/28 12:03:56 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,24 @@ int	ft_strfin(const char *str, char c)
 	i = 0;
 	ii = 0;
 	while (str[i])
+	{
+		if (str[i] == c)
+		{
+			ii++;
+		}
+		i++;
+	}
+	return (ii);
+}
+
+int	ft_strfin_end(const char *str, char c, int end)
+{
+	int	i;
+	int	ii;
+
+	i = 0;
+	ii = 0;
+	while (str[i] && i <= end)
 	{
 		if (str[i] == c)
 		{

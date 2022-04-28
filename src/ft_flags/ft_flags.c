@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/28 12:17:13 by diegofranci      ###   ########.fr       */
+/*   Created: 2022/04/28 12:17:47 by diegofranci       #+#    #+#             */
+/*   Updated: 2022/04/28 12:19:51 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/ft_printf.h"
-#include <stdio.h>
+#include "../ft_printf.h"
 
-	//ft_printf("\n**> tf_    |-|%c|-|%s|-|%i|-|%d|-|%u|-|%x|-|%X|-|%%|-|%p|\n",
-	//	'D', "Luna", 42, 24, 12, 2022, 2222, "\n\n");
-	//printf("\n**> printf |-|%c|-|%s|-|%i|-|%d|-|%u|-|%x|-|%X|-|%%|-|%p|\n",
-	//	'D', "Luna", 42, 24, 12, 2022, 2222, "\n\n");
-int	main(void)
+void	ft_flags(t_printf *ob_print, char *str, int counter)
 {
-	ft_printf("f: %-i", 1);
-	printf("p: %-i", 1);
-	return (0);
+	
 }
