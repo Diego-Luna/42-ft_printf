@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 10:03:25 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/28 12:15:59 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/29 14:39:49 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ void	ft_add_flags(t_printf *ob_print, char c)
 void	ft_str_flags(const char *s, int i, t_printf *ob_print)
 {
 	int	num;
+	int	start;
+	int	end;
 
 	i++;
+	start = i;
 	num = ft_strfin_end(s, '%', i);
 	ft_add_flags(ob_print, (num + 48));
 	ft_add_flags(ob_print, '(');
@@ -53,7 +56,12 @@ void	ft_str_flags(const char *s, int i, t_printf *ob_print)
 		ft_add_flags(ob_print, s[i]);
 		i++;
 	}
+	end = i;
 	ft_add_flags(ob_print, ')');
+	ft_strtostr(ob_print->strold, ob_print->str);
+	ft_strtostrnn(ob_print->str, ob_print->strold, start, end);
+	printf("\nEl valor de str: {%s}\n", ob_print->str);
+	printf("\nEl valor de strold: {%s}\n", ob_print->strold);
 }
 
 int	ft_strchrall(const char *s, char c, t_printf *ob_print)
@@ -77,13 +85,15 @@ int	ft_strchrall(const char *s, char c, t_printf *ob_print)
 		else if (s[i] == c && s[i - 1] != '%')
 		{
 			ft_str_flags(s, i, ob_print);
+			i--;
 		}
 		i++;
 	}
 	return (num);
 }
 
-int	ft_check_params(va_list arg, t_printf *ob_print, const char *str)
+//int	ft_check_params(va_list arg, t_printf *ob_print, const char *str)
+int	ft_check_params(va_list arg, t_printf *ob_print)
 {
 	int	num;
 
@@ -91,8 +101,8 @@ int	ft_check_params(va_list arg, t_printf *ob_print, const char *str)
 	{
 		return (-1);
 	}
-	num = ft_strchrall(str, '%', ob_print);
-	printf("\n-->ob_print->flags:%s\n", ob_print->flags);
+	num = ft_strchrall(ob_print->str, '%', ob_print);
+	printf("\n-->ob_print->flags:{%s}\n", ob_print->flags);
 	if (num < 0)
 	{
 		return (-1);

@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/28 12:04:17 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/29 15:16:56 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 typedef struct s_printf
 {
 	char	str[1000];
+	char	strold[1000];
 	char	convers[255];
 	char	flags[255];
 	char	result[1000];
@@ -31,15 +32,17 @@ typedef struct s_printf
 // main
 int		ft_printf(const char *str, ...);
 int		ft_convert(va_list arg, t_printf *ob_print);
-int		ft_check_params(va_list arg, t_printf *ob_print, const char *str);
+int		ft_check_params(va_list arg, t_printf *ob_print);
+//int		ft_check_params(va_list arg, t_printf *ob_print, const char *str);
 
 // ft_result_
 void	ft_result_sign(t_printf *ob_print, int counter);
+void	ft_flags(t_printf *ob_print, char *str, int counter);
 void	ft_result_c(int arg, t_printf *ob_print, int counter);
-void	ft_result_p(unsigned long p, t_printf *ob_print, int counter);
 void	ft_result_di(int arg, t_printf *ob_print, int counter);
 void	ft_result_s(char	*arg, t_printf *ob_print, int counter);
 void	ft_update_result(t_printf *ob_print, char *str, int counter);
+void	ft_result_p(unsigned long p, t_printf *ob_print, int counter);
 void	ft_result_u(unsigned int arg, t_printf *ob_print, int counter);
 void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
 	int counter);
@@ -52,6 +55,7 @@ int		ft_strfin(const char *str, char c);
 void	ft_inttostrn(unsigned int nb, char *str);
 void	ft_strtostr(char *str1, const char *str2);
 void	ft_inttostrx(int nb, char *str, char *val);
+int		ft_findc(const char *str, int start, char c);
 int		ft_strfind(const char *str, int start, char c);
 int		ft_strfin_end(const char *str, char c, int end);
 void	ft_strtostrnf(char *str1, const char *str2, int n);

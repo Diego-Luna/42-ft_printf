@@ -6,11 +6,24 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:17:36 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/28 12:03:56 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/29 15:16:38 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_findc(const char *str, int start, char c)
+{
+	while (str[start])
+	{
+		if (str[start] == c)
+		{
+			return (start);
+		}
+		start++;
+	}
+	return (0);
+}
 
 int	ft_strfind(const char *str, int start, char c)
 {

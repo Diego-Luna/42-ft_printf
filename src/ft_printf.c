@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 10:30:18 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/28 11:33:57 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/29 14:39:08 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@ int	ft_printf(const char *str, ...)
 
 	ob_print.str[0] = '\0';
 	ob_print.flags[0] = '\0';
+	ob_print.strold[0] = '\0';
 	ob_print.result[0] = '\0';
 	ob_print.convers[0] = '\0';
 	va_start(arg, str);
-	if (ft_check_params(arg, &ob_print, str) < 0)
+	ft_strtostr(ob_print.str, str);
+	if (ft_check_params(arg, &ob_print) < 0)
 	{
 		printf("0-> Error - 0");
 		return (-1);
 	}
-	ft_strtostr(ob_print.str, str);
-	ft_strtostr(ob_print.result, str);
+	ft_strtostr(ob_print.result, ob_print.str);
 	if (!ft_convert(arg, &ob_print))
 	{
 		printf("0-> Error - 1");
