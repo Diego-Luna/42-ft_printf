@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:17:36 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/29 15:16:38 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/04/30 14:27:34 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,19 +80,6 @@ void	ft_strtostr(char *str1, const char *str2)
 
 	i = 0;
 	while (str2[i])
-	{
-		str1[i] = str2[i];
-		i++;
-	}
-	str1[i] = '\0';
-}
-
-void	ft_strtostrnf(char *str1, const char *str2, int n)
-{
-	int	i;
-
-	i = 0;
-	while (str2[i] && i < n)
 	{
 		str1[i] = str2[i];
 		i++;
