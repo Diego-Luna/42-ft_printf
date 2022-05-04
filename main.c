@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/03 20:36:35 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/04 16:50:56 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 int	main(void)
 {
 	ft_printf("f: %02i", 1);
-	//ft_printf("f: %i", 1);
 	printf("p: %02i", 1);
 	return (0);
 }

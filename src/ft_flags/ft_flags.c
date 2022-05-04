@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:17:47 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/03 20:52:24 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/04 17:26:47 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,44 @@ int	ft_flag_on(t_printf *ob_print, char counter)
 	return (-1);
 }
 
-void	ft_get_flag(t_printf *ob_print, int position, char	*str)
+// char	*ft_get_flag(t_printf *ob_print, int position)
+void	ft_get_flag(t_printf *ob_print, int position, char	*past)
 {
 	int		end;
+	char	str[20];
 
 	position += 2;
 	end = ft_findc(ob_print->flags, position, ')');
 	ft_strtostr_rango(str, ob_print->flags, position, end);
-	printf("\n>start:{%i}-end:{%i}\n", position, end);
+	ft_strtostr(past, str);
+}
+
+void	ft_flag_number(t_printf *ob_print, char *flags, char *str)
+{
+	char	ceros[200];
+	int		leng_numbes;
+	int		leng_string;
+	int		full;
+	int		i;
+
+	leng_string = ft_strlen(str);
+	leng_numbes = ft_atoi(flags);
+	if (leng_numbes > leng_string)
+	{
+		full = leng_numbes - leng_string;
+		i = 0;
+		while (full > 0)
+		{
+			ceros[i] = '0';
+			i++;
+			full--;
+		}
+		ceros[i] = '\0';
+		ft_strtostr(ob_print->strold, str);
+		ft_strtostr(str, ceros);
+		ft_strtostrn(str, ob_print->strold, i);
+	}
+	printf("\n Valor de atoi:%i, len:%i, ceros:%s\n", leng_numbes, leng_string, str);
 }
 
 void	ft_control(t_printf *ob_print, char *flags, char *str)
@@ -45,35 +75,35 @@ void	ft_control(t_printf *ob_print, char *flags, char *str)
 
 	i = 0;
 	(void)ob_print;
+	(void)str;
 	while (flags[i])
 	{
 		if (flags[i] == '-')
 		{
-			(void)str;
+			printf("\n///-/////\n");
 		}
 		if ((flags[i] == '0' || flags[i] == '.') && ft_isdigit(flags[i + 1]))
 		{
-			(void)str;
+			printf("\n///0numbers/////\n");
+			ft_flag_number(ob_print, flags, str);
 		}
 		i++;
 	}
 }
 
-void	ft_flags(t_printf *ob_print, char *str, int counter)
+void	ft_flags(t_printf *ob_print, char *val, int counter)
 {
 	int		i;
-	char	flags[20];
+	char	str[20];
 
-	(void)str;
+	(void)val;
 	(void)counter;
-	flags[19] = '\0';
-	printf("\n+Valor de flags s:%s\n", ob_print->flags);
 	i = ft_flag_on(ob_print, 1);
-	printf("\n+++++Valor de i:%i \n", i);
 	if (i >= 0)
 	{
-		ft_get_flag(ob_print, i, flags);
-		//printf("\n -->El valor de flags:/%s/\n", flags);
-		//ft_control(ob_print, flags, str);
+		ft_strtostr(str, "flags");
+		ft_get_flag(ob_print, i, str);
+		printf("\n-->El valor de flags:/%s/\n", str);
+		ft_control(ob_print, str, val);
 	}
 }

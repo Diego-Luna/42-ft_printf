@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/03 20:47:07 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/04 16:31:58 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdarg.h>
 # include "../libft/libft.h"
 
+//char	str[1000];
 typedef struct s_printf
 {
 	char	str[1000];
