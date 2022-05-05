@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:17:47 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/04 17:26:47 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/05 15:40:26 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,13 @@ void	ft_flag_number(t_printf *ob_print, char *flags, char *str)
 	printf("\n Valor de atoi:%i, len:%i, ceros:%s\n", leng_numbes, leng_string, str);
 }
 
+void	ft_flag_space(t_printf *ob_print, char *flags, char *str)
+{
+	(void)ob_print;
+	(void)flags;
+	(void)str;
+}
+
 void	ft_control(t_printf *ob_print, char *flags, char *str)
 {
 	int	i;
@@ -86,6 +93,10 @@ void	ft_control(t_printf *ob_print, char *flags, char *str)
 		{
 			printf("\n///0numbers/////\n");
 			ft_flag_number(ob_print, flags, str);
+		}
+		if (flags[i] == ' ')
+		{
+			ft_flag_space(ob_print, flags, str);
 		}
 		i++;
 	}

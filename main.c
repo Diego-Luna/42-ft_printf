@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/04 16:50:56 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/05 15:40:44 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 	//	'D', "Luna", 42, 24, 12, 2022, 2222, "\n\n");
 int	main(void)
 {
-	ft_printf("f: %02i", 1);
-	printf("p: %02i", 1);
+	ft_printf("f: %03i\n", 1);
+	//printf("p: %02i", 1);
+	printf("p: %  i\n", 1);
 	return (0);
 }
