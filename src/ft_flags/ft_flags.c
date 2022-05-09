@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:17:47 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/09 15:42:49 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/09 16:16:43 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	ft_flag_space(t_printf *ob_print, char *str)
 	ft_strtostr(ob_print->strold, str);
 	ft_strtostr(str, " ");
 	ft_strtostrn(str, ob_print->strold, 1);
-	printf("*> str:{%s}\n", str);
 }
 
 void	ft_control(t_printf *ob_print, char *flags, char *str)

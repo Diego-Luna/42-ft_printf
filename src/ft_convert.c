@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/29 14:39:31 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/09 16:18:39 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_update_result(t_printf *ob_print, char *str, int counter)
 	int	ii;
 
 	i = 0;
-	(void)counter;
+	ii = 0;
 	i = ft_strfind(ob_print->result, 0, '%');
 	ft_strtostrn(ob_print->result, str, i);
 	i = 0;
