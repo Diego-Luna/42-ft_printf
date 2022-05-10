@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:17:47 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/09 16:16:43 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/10 12:58:34 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,29 @@ void	ft_flag_number(t_printf *ob_print, char *flags, char *str)
 
 void	ft_flag_space(t_printf *ob_print, char *str)
 {
-	// (void)ob_print;
-	// (void)str;
 	ft_strtostr(ob_print->strold, str);
 	ft_strtostr(str, " ");
 	ft_strtostrn(str, ob_print->strold, 1);
+}
+
+void	ft_flag_plus(t_printf *ob_print, char *str)
+{
+	int	number;
+
+	if (str[0] != '+')
+	{
+		number = ft_atoi(str);
+		ft_strtostr(ob_print->strold, str);
+		if (number < 0)
+		{
+			ft_strtostrn(str, ob_print->strold, 0);
+		}
+		else
+		{
+			ft_strtostr(str, "+");
+			ft_strtostrn(str, ob_print->strold, 1);
+		}
+	}
 }
 
 void	ft_control(t_printf *ob_print, char *flags, char *str)
@@ -99,6 +117,10 @@ void	ft_control(t_printf *ob_print, char *flags, char *str)
 		if (flags[i] == ' ' && flags[i - 1] != ' ')
 		{
 			ft_flag_space(ob_print, str);
+		}
+		if (flags[i] == '+')
+		{
+			ft_flag_plus(ob_print, str);
 		}
 		i++;
 	}
