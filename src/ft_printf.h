@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/04 16:31:58 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/10 14:48:19 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ void	ft_result_u(unsigned int arg, t_printf *ob_print, int counter);
 void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
 	int counter);
 
+// flags
+void	ft_flag_plus(t_printf *ob_print, char *str);
+void	ft_flag_space(t_printf *ob_print, char *str);
+void	ft_flag_number(t_printf *ob_print, char *flags, char *str);
+
 // str
 int		ft_check(char s);
 void	ft_write(int n, char *str);
@@ -61,7 +66,7 @@ int		ft_strfind(const char *str, int start, char c);
 int		ft_strfin_end(const char *str, char c, int end);
 void	ft_strtostrnf(char *str1, const char *str2, int n);
 void	ft_strtostrn(char *str1, const char *str2, int start);
-void	ft_strtostrnn(char *str1, const char *str2, int start1, int start2 );
 void	ft_strtostr_rango(char *str1, char *str2, int start2, int end2);
+void	ft_strtostrnn(char *str1, const char *str2, int start1, int start2 );
 
 #endif

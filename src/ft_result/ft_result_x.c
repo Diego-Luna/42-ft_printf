@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/10 14:15:01 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/10 14:41:45 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_result_sign(t_printf *ob_print, int counter)
 
 	str[0] = '%';
 	str[1] = '\0';
+	ft_flags(ob_print, str, counter);
 	ft_update_result(ob_print, str, counter);
 }
 
@@ -48,6 +49,7 @@ void	ft_result_p(unsigned long p, t_printf *ob_print, int counter)
 	}
 	ft_inttostrx(p, str2, "0123456789abcdef");
 	ft_strtostrn(str1, str2, ft_strlen(str1));
+	ft_flags(ob_print, str1, counter);
 	ft_update_result(ob_print, str1, counter);
 }
 	//printf("\n--2> 0> p-i: %lu\n", p);
