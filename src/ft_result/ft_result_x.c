@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/26 09:34:05 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/10 14:15:01 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
 
 	str[0] = '\0';
 	ft_inttostrx(arg, str, val);
+	ft_flags(ob_print, str, counter);
 	ft_update_result(ob_print, str, counter);
 }
 

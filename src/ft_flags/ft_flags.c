@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:17:47 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/10 12:58:34 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/10 14:21:38 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,22 +96,32 @@ void	ft_flag_plus(t_printf *ob_print, char *str)
 	}
 }
 
+void	ft_flag_cat(t_printf *ob_print, char *str)
+{
+	ft_strtostr(ob_print->strold, str);
+	ft_strtostr(str, "0x");
+	printf("**>str{%s}\n", str);
+	ft_strtostrn(str, ob_print->strold, 2);
+	printf("**>str{%s}\n", str);
+}
+
 void	ft_control(t_printf *ob_print, char *flags, char *str)
 {
 	int	i;
 
 	i = 0;
-	(void)ob_print;
-	(void)str;
 	while (flags[i])
 	{
+		if (flags[i] == '#')
+		{
+			ft_flag_cat(ob_print, str);
+			// printf("\n<ft_flag_cat>\n");
+		}
 		if (flags[i] == '-')
 		{
-			printf("\n///-/////\n");
 		}
 		if ((flags[i] == '0' || flags[i] == '.') && ft_isdigit(flags[i + 1]))
 		{
-			printf("\n///0numbers/////\n");
 			ft_flag_number(ob_print, flags, str);
 		}
 		if (flags[i] == ' ' && flags[i - 1] != ' ')
