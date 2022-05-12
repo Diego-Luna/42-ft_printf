@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:17:47 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/10 14:48:02 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/11 21:03:24 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,6 @@ void	ft_get_flag(t_printf *ob_print, int position, char	*past)
 	end = ft_findc(ob_print->flags, position, ')');
 	ft_strtostr_rango(str, ob_print->flags, position, end);
 	ft_strtostr(past, str);
-}
-
-void	ft_flag_cat(t_printf *ob_print, char *str)
-{
-	ft_strtostr(ob_print->strold, str);
-	ft_strtostr(str, "0x");
-	printf("**>str{%s}\n", str);
-	ft_strtostrn(str, ob_print->strold, 2);
-	printf("**>str{%s}\n", str);
 }
 
 void	ft_control(t_printf *ob_print, char *flags, char *str)
