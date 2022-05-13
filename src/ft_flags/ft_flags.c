@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:17:47 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/13 10:42:05 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/13 11:24:04 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_flags(t_printf *ob_print, char *val, int counter)
 	int		i;
 	char	str[20];
 
-	(void)val;
+	// (void)val;
 	(void)counter;
 	i = ft_flag_on(ob_print, 1);
 	if (i >= 0)
