@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 10:03:25 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/29 14:39:49 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/13 10:41:33 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,39 +29,6 @@ int	ft_check(char s)
 		return (1);
 	}
 	return (0);
-}
-
-void	ft_add_flags(t_printf *ob_print, char c)
-{
-	size_t	i;
-
-	i = ft_strlen(ob_print->flags);
-	ob_print->flags[i] = c;
-	ob_print->flags[i + 1] = '\0';
-}
-
-void	ft_str_flags(const char *s, int i, t_printf *ob_print)
-{
-	int	num;
-	int	start;
-	int	end;
-
-	i++;
-	start = i;
-	num = ft_strfin_end(s, '%', i);
-	ft_add_flags(ob_print, (num + 48));
-	ft_add_flags(ob_print, '(');
-	while (!ft_check(s[i]))
-	{
-		ft_add_flags(ob_print, s[i]);
-		i++;
-	}
-	end = i;
-	ft_add_flags(ob_print, ')');
-	ft_strtostr(ob_print->strold, ob_print->str);
-	ft_strtostrnn(ob_print->str, ob_print->strold, start, end);
-	printf("\nEl valor de str: {%s}\n", ob_print->str);
-	printf("\nEl valor de strold: {%s}\n", ob_print->strold);
 }
 
 int	ft_strchrall(const char *s, char c, t_printf *ob_print)
@@ -102,7 +69,6 @@ int	ft_check_params(va_list arg, t_printf *ob_print)
 		return (-1);
 	}
 	num = ft_strchrall(ob_print->str, '%', ob_print);
-	printf("\n-->ob_print->flags:{%s}\n", ob_print->flags);
 	if (num < 0)
 	{
 		return (-1);

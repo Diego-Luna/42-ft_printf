@@ -1,7 +1,9 @@
 NAME = libftprintf.a
 
 SRCS =	src/ft_printf.c src/ft_check_params.c src/ft_convert.c src/str_1.c src/str_2.c src/strt_to_number.c \
-				src/ft_result/ft_result_di_u.c src/ft_result/ft_result_s_c.c src/ft_result/ft_result_x.c src/ft_flags/ft_flags.c
+				src/ft_result/ft_result_di_u.c src/ft_result/ft_result_s_c.c src/ft_result/ft_result_x.c src/ft_flags/ft_flags.c \
+				src/ft_flags/ft_add_flags.c src/ft_flags/ft_flag_cat.c src/ft_flags/ft_flag_number.c src/ft_flags/ft_flag_plus.c \
+				src/ft_flags/ft_flag_space.c src/ft_flags/ft_str_flags.c
 
 OBJS = ${SRCS:.c=.o}
 

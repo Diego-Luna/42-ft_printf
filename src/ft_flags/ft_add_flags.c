@@ -5,8 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 21:04:31 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/11 21:04:31 by diegofranci      ###   ########.fr       */
+/*   Created: 2022/05/13 10:32:45 by diegofranci       #+#    #+#             */
+/*   Updated: 2022/05/13 10:35:55 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../ft_printf.h"
+
+void	ft_add_flags(t_printf *ob_print, char c)
+{
+	size_t	i;
+
+	i = ft_strlen(ob_print->flags);
+	ob_print->flags[i] = c;
+	ob_print->flags[i + 1] = '\0';
+}

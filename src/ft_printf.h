@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/11 21:03:37 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/13 10:37:29 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ void	ft_result_p(unsigned long p, t_printf *ob_print, int counter);
 void	ft_result_u(unsigned int arg, t_printf *ob_print, int counter);
 void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
 	int counter);
+
+// flags -> ft_check_params
+void	ft_add_flags(t_printf *ob_print, char c);
+void	ft_str_flags(const char *s, int i, t_printf *ob_print);
 
 // flags
 void	ft_flag_cat(t_printf *ob_print, char *str);

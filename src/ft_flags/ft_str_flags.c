@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flag_cat.c                                      :+:      :+:    :+:   */
+/*   ft_str_flags.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 21:03:10 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/13 10:41:59 by diegofranci      ###   ########.fr       */
+/*   Created: 2022/05/13 10:36:52 by diegofranci       #+#    #+#             */
+/*   Updated: 2022/05/13 10:42:15 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_flag_cat(t_printf *ob_print, char *str)
+void	ft_str_flags(const char *s, int i, t_printf *ob_print)
 {
-	ft_strtostr(ob_print->strold, str);
-	ft_strtostr(str, "0x");
-	ft_strtostrn(str, ob_print->strold, 2);
+	int	num;
+	int	start;
+	int	end;
+
+	i++;
+	start = i;
+	num = ft_strfin_end(s, '%', i);
+	ft_add_flags(ob_print, (num + 48));
+	ft_add_flags(ob_print, '(');
+	while (!ft_check(s[i]))
+	{
+		ft_add_flags(ob_print, s[i]);
+		i++;
+	}
+	end = i;
+	ft_add_flags(ob_print, ')');
+	ft_strtostr(ob_print->strold, ob_print->str);
+	ft_strtostrnn(ob_print->str, ob_print->strold, start, end);
 }

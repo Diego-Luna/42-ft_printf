@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:17:47 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/11 21:03:24 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/13 10:42:05 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void	ft_flags(t_printf *ob_print, char *val, int counter)
 	{
 		ft_strtostr(str, "flags");
 		ft_get_flag(ob_print, i, str);
-		printf("\n-->El valor de flags:/%s/\n", str);
 		ft_control(ob_print, str, val);
 	}
 }

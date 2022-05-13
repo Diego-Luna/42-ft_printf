@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/10 14:41:45 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/13 10:42:24 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,3 @@ void	ft_result_p(unsigned long p, t_printf *ob_print, int counter)
 	ft_flags(ob_print, str1, counter);
 	ft_update_result(ob_print, str1, counter);
 }
-	//printf("\n--2> 0> p-i: %lu\n", p);
-	//printf("\n--2> 0> s2: %s\n", str2);
-	//printf("\n--2> 0> s1: %s\n", str1);
-
-/*
-void	ft_result_p(void *p, t_printf *ob_print, int counter)
-{
-	char	*p_char;
-
-	(void)counter;
-	(void)ob_print;
-	p_char = p;
-	printf("\n--2> 0> p: %p\n", p);
-	printf("\n--2> 0> d: %p\n", p_char);
-}
-*/
