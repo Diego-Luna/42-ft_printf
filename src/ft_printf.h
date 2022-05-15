@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/13 10:37:29 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/14 20:21:16 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	ft_flag_cat(t_printf *ob_print, char *str);
 void	ft_flag_plus(t_printf *ob_print, char *str);
 void	ft_flag_space(t_printf *ob_print, char *str);
 void	ft_flag_number(t_printf *ob_print, char *flags, char *str);
+void	ft_control(t_printf *ob_print, char *flags, char *str);
 
 // str
 int		ft_check(char s);
@@ -73,5 +74,10 @@ void	ft_strtostrnf(char *str1, const char *str2, int n);
 void	ft_strtostrn(char *str1, const char *str2, int start);
 void	ft_strtostr_rango(char *str1, char *str2, int start2, int end2);
 void	ft_strtostrnn(char *str1, const char *str2, int start1, int start2 );
+
+// test
+int		ft_isdigit(int c);
+int		ft_atoi(const char *str);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif

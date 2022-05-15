@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:17:47 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/13 11:24:04 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/14 20:20:35 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	ft_flag_on(t_printf *ob_print, char counter)
 	return (-1);
 }
 
-// char	*ft_get_flag(t_printf *ob_print, int position)
 void	ft_get_flag(t_printf *ob_print, int position, char	*past)
 {
 	int		end;
@@ -41,42 +40,11 @@ void	ft_get_flag(t_printf *ob_print, int position, char	*past)
 	ft_strtostr(past, str);
 }
 
-void	ft_control(t_printf *ob_print, char *flags, char *str)
-{
-	int	i;
-
-	i = 0;
-	while (flags[i])
-	{
-		if (flags[i] == '-')
-		{
-		}
-		if ((flags[i] == '0' || flags[i] == '.') && ft_isdigit(flags[i + 1]))
-		{
-			ft_flag_number(ob_print, flags, str);
-		}
-		if (flags[i] == ' ' && flags[i - 1] != ' ')
-		{
-			ft_flag_space(ob_print, str);
-		}
-		if (flags[i] == '+')
-		{
-			ft_flag_plus(ob_print, str);
-		}
-		if (flags[i] == '#')
-		{
-			ft_flag_cat(ob_print, str);
-		}
-		i++;
-	}
-}
-
 void	ft_flags(t_printf *ob_print, char *val, int counter)
 {
 	int		i;
 	char	str[20];
 
-	// (void)val;
 	(void)counter;
 	i = ft_flag_on(ob_print, 1);
 	if (i >= 0)
