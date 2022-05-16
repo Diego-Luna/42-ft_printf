@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:05:24 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/13 10:55:20 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/16 08:29:52 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,21 @@ void	ft_result_s(char	*arg, t_printf *ob_print, int counter)
 	ft_update_result(ob_print, arg, counter);
 }
 
+	// str[0] = arg;
 void	ft_result_c(int arg, t_printf *ob_print, int counter)
 {
 	char	str[2];
 
-	str[0] = arg;
-	str[1] = '\0';
+	if (arg == 0)
+	{
+		str[0] = '^';
+		str[1] = '\0';
+	}
+	else
+	{
+		str[0] = arg;
+		str[1] = '\0';
+	}
 	ft_flags(ob_print, str, counter);
 	ft_update_result(ob_print, str, counter);
 }
