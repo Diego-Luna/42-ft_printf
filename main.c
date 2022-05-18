@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/16 08:20:26 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/17 09:40:36 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,19 @@
 
 int	main(void)
 {
-	ft_printf("--------------------%%c--------------------\n");		//Perfect
+	ft_printf("--------------------%%p--------------------\n");
+	int	test;
+
+	test = -1;
+	int i = printf("\n1p: %p, %i ", &test, &test);
+	int ii = ft_printf("\n1f: %p ", &test);
+	printf("\nValor de i : {%i}", i);
+	printf("\nValor de ii : {%i}", ii);
+	return (0);
+}
 
 	// int i = printf("\n12");
 	// int ii = ft_printf("\n12");
-	int i = printf("\n5p: %c %c %c ", '0', 0, '1');
-	int ii = ft_printf("\n5f: %c %c %c ", '0', 0, '1');
-	printf("\nValor de i : {%i}", i);
-	printf("\nValor de ii : {%i}", ii);
 	// ft_printf("1:%c\n", '0');
 
 	// printf("01) print PRINTF : |%c|\n", 'a');
@@ -46,5 +51,3 @@ int	main(void)
 	// printf("10) print PRINTF : |%1c|\n", '\0');
 	// ft_printf("10} ft_ PRINTF  : |%1c|\n", '\0');
 	// ft_printf("--------------------%%s--------------------\n");			//Perfect
-	return (0);
-}
