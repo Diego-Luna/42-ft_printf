@@ -6,19 +6,36 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/15 20:56:34 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/19 09:26:02 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
+// void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
+// 	int counter)
+void	ft_result_x(int arg, t_printf *ob_print, char *val, \
 	int counter)
 {
 	char	str[12];
+	char	hex[20];
 
 	str[0] = '\0';
-	ft_inttostrx(arg, str, val);
+	hex[0] = '\0';
+	ft_strtostr(hex, val);
+	if (arg >= 0)
+	{
+		ft_inttostrx(arg, str, val);
+	}
+	else
+	{
+		ft_str_invest(hex);
+		arg *= -1;
+		arg -= 1;
+		ft_inttostrx(arg, str, hex);
+		ft_fill(str, 'f', 8);
+		ft_str_invest(str);
+	}
 	ft_flags(ob_print, str, counter);
 	ft_update_result(ob_print, str, counter);
 }
