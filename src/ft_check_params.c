@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 10:03:25 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/13 10:41:33 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/20 10:26:49 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ int	ft_check_params(va_list arg, t_printf *ob_print)
 	{
 		return (-1);
 	}
+	printf("\n-> ob_print->convers {%s}\n", ob_print->convers);
 	return (1);
 }

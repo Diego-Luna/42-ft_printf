@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/20 09:43:04 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/20 10:24:53 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,11 @@ void	ft_result_x(int arg, t_printf *ob_print, char *val, \
 		ft_str_invest(hex);
 		arg *= -1;
 		arg -= 1;
-		// printf("\n--> arg_1: {%d}\n", arg);
 		ft_inttostrx(arg, str, hex);
-		// printf("\n--> Str_1: {%s}\n", str);
-		ft_fill(str, 'f', 8);
-		// printf("\n--> Str_2: {%s}\n", str);
-		// ft_str_invest(str);
+		// ft_fill(str, 'f', 8);
+		ft_fill(str, hex[0], 8);
 	}
-	ft_flags(ob_print, str, counter);
+	// ft_flags(ob_print, str, counter);
 	ft_update_result(ob_print, str, counter);
 }
 
