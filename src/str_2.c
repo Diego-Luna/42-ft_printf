@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:19:58 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/19 09:23:47 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/20 09:42:37 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,17 @@ void	ft_strtostr_rango(char *str1, char *str2, int start2, int end2)
 void	ft_fill(char *str, char fill, int number)
 {
 	int i;
+	int leng_str;
+	char copy_str[40];
 
-	i = ft_strlen(str) - 1;
-	i++;
-	while (i < number)
+	leng_str = ft_strlen(str);
+	copy_str[0] = '\0';
+	ft_strtostr(copy_str, str);
+	i = 0;
+	while (i < (number - leng_str))
 	{
 		str[i] = fill;
 		i++;
 	}
+	ft_strtostrn(str, copy_str, i);
 }
