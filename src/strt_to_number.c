@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 18:59:44 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/18 19:00:15 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/20 09:20:22 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,27 +47,16 @@ void	ft_inttostr(int nb, char *str)
 void	ft_inttostrx(int nb, char *str, char *val)
 {
 	int	leng;
+	int leng_val;
 
-	if (nb <= -2147483648)
+	leng_val = ft_strlen(val) - 1;
+	if (nb > leng_val)
 	{
 		ft_inttostrx(nb / ft_strlen(val), str, val);
-		ft_write(8, str);
 	}
-	else if (nb < 0)
-	{
-		ft_write(-3, str);
-		ft_inttostrx(-nb, str, val);
-	}
-	else
-	{
-		if (nb > 9)
-		{
-			ft_inttostrx(nb / ft_strlen(val), str, val);
-		}
-		leng = ft_strlen(str);
-		str[leng] = val[nb % ft_strlen(val)];
-		str[leng + 1] = '\0';
-	}
+	leng = ft_strlen(str);
+	str[leng] = val[nb % ft_strlen(val)];
+	str[leng + 1] = '\0';
 }
 
 void	ft_inttostrn(unsigned int nb, char *str)
