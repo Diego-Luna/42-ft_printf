@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 10:03:25 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/21 21:33:53 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/22 08:00:50 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_add_convers(t_printf *ob_print, char c)
 	i = ft_strlen(ob_print->convers);
 	ob_print->convers[i] = c;
 	ob_print->convers[i + 1] = '\0';
-	printf("--> 1_ob_print->convers:{%s} \n", ob_print->convers);
 }
 
 int	ft_check(char s)
@@ -35,22 +34,20 @@ int	ft_check(char s)
 int	ft_strchrall(const char *s, char c, t_printf *ob_print)
 {
 	int	i;
+	int	i_old;
 	int	num;
 
 	i = 0;
 	num = 0;
-	if (!s)
-	{
-		return (-1);
-	}
+	i_old = 0;
 	while (s[i])
 	{
 		// if (s[i] == c && ft_check(s[i + 1]) && s[i - 1] != '%')
-		if (s[i] == c && ft_check(s[i + 1]))
+		if (s[i] == c && ft_check(s[i + 1]) && i != (i_old + 1))
 		{
 			num++;
+			i_old = i;
 			ft_add_convers(ob_print, s[i + 1]);
-			printf("\n--> i:{%i}\n", i);
 		}
 		else if (s[i] == c && s[i - 1] != '%')
 		{
