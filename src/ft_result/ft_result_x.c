@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/20 10:24:53 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/21 21:42:21 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	ft_result_sign(t_printf *ob_print, int counter)
 
 	str[0] = '%';
 	str[1] = '\0';
+	printf("ft_result_sign");
 	ft_flags(ob_print, str, counter);
 	ft_update_result(ob_print, str, counter);
 }
