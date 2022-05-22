@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 10:30:18 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/17 09:39:23 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/22 17:13:11 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_printf(const char *str, ...)
 	va_list		arg;
 	t_printf	ob_print;
 
+	ob_print.position = -1;
 	ob_print.str[0] = '\0';
 	ob_print.flags[0] = '\0';
 	ob_print.strold[0] = '\0';

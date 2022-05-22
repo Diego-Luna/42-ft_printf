@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/09 16:18:39 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/22 17:13:01 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,50 @@
 void	ft_update_result(t_printf *ob_print, char *str, int counter)
 {
 	int	i;
+	int	i_old;
 	int	ii;
 
 	i = 0;
-	ii = 0;
-	i = ft_strfind(ob_print->result, 0, '%');
+	i_old = 0;
+	ii = 1;
+	i = ft_strfind(ob_print->result, i, '%', ob_print->convers[counter]);
+	// printf("--> i : counter: {%i : %i}\n", i, counter);
+	// printf("--> i : ob_print->result: {%s}\n", ob_print->result);
 	ft_strtostrn(ob_print->result, str, i);
-	i = 0;
-	while (counter >= 0)
+	// printf("--> ob_print->result: {%s}\n", ob_print->result);
+	i = ft_strfind(ob_print->str, 0, '%', ob_print->convers[counter]);
+	i_old = i;
+	while (i <= ob_print->position)
 	{
-		i = ft_strfind(ob_print->str, i + ii, '%');
-		ii = 1;
-		counter--;
+		i = ft_strfind(ob_print->str, i_old + ii, \
+			'%', ob_print->convers[counter]);
+		ii++;
 	}
+	ob_print->position = i;
+	// printf("--> str_i: {%i}\n", i);
+	// printf("--> ob_print->str: {%s}\n", ob_print->str);
 	ft_strtostrnn(ob_print->result, ob_print->str, \
 		ft_strlen(ob_print->result), i + 2);
 }
+// void	ft_update_result(t_printf *ob_print, char *str, int counter)
+// {
+// 	int	i;
+// 	int	ii;
+
+// 	i = 0;
+// 	ii = 0;
+// 	i = ft_strfind(ob_print->result, 0, '%');
+// 	ft_strtostrn(ob_print->result, str, i);
+// 	i = 0;
+// 	while (counter >= 0)
+// 	{
+// 		i = ft_strfind(ob_print->str, i + ii, '%');
+// 		ii = 1;
+// 		counter--;
+// 	}
+// 	ft_strtostrnn(ob_print->result, ob_print->str,
+// 		ft_strlen(ob_print->result), i + 2);
+// }
 
 //int	ft_convert(va_list arg, t_printf *ob_print, const char *str)
 int	ft_convert(va_list arg, t_printf *ob_print)

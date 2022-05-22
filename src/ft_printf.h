@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/19 09:25:46 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/22 17:13:06 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_printf
 	char	convers[255];
 	char	flags[255];
 	char	result[1000];
+	int		position;
 }	t_printf;
 
 // main
@@ -47,7 +48,7 @@ void	ft_result_p(unsigned long p, t_printf *ob_print, int counter);
 void	ft_result_u(unsigned int arg, t_printf *ob_print, int counter);
 void	ft_result_x(int arg, t_printf *ob_print, char *val, \
 	int counter);
-// void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
+// void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val,
 // 	int counter);
 
 // flags -> ft_check_params
@@ -71,8 +72,9 @@ void	ft_inttostrn(unsigned int nb, char *str);
 void	ft_strtostr(char *str1, const char *str2);
 void	ft_fill(char *str, char fill, int number);
 void	ft_inttostrx(int nb, char *str, char *val);
+// int		ft_strfind(const char *str, int start, char c);
+int		ft_strfind(const char *str, int start, char c, char c_2);
 int		ft_findc(const char *str, int start, char c);
-int		ft_strfind(const char *str, int start, char c);
 int		ft_strfin_end(const char *str, char c, int end);
 void	ft_strtostrnf(char *str1, const char *str2, int n);
 void	ft_strtostrn(char *str1, const char *str2, int start);

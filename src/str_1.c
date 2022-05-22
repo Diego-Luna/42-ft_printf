@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:17:36 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/04/30 14:27:34 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/22 09:46:51 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ int	ft_findc(const char *str, int start, char c)
 	return (0);
 }
 
-int	ft_strfind(const char *str, int start, char c)
+int	ft_strfind(const char *str, int start, char c, char c_2)
 {
 	while (str[start])
 	{
-		if (str[start] == c && ft_check(str[start + 1]))
+		// if (str[start] == c && ft_check(str[start + 1]))
+		if (str[start] == c && str[start + 1] == c_2)
 		{
 			return (start);
 		}

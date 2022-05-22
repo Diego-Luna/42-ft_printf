@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:19:58 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/20 09:42:37 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/22 09:50:06 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,16 @@ void	ft_strtostrn(char *str1, const char *str2, int start)
 
 void	ft_str_invest(char *str)
 {
-	int i;
-	int ii;
-	int leng;
-	char tem;
+	int		i;
+	int		ii;
+	int		leng;
+	char	tem;
 
 	leng = ft_strlen(str) - 1;
 	i = 0;
 	ii = leng;
-	while (i <= (leng / 2)){
+	while (i <= (leng / 2))
+	{
 		tem = str[i];
 		str[i] = str[ii];
 		str[ii] = tem;
@@ -85,9 +86,9 @@ void	ft_strtostr_rango(char *str1, char *str2, int start2, int end2)
 
 void	ft_fill(char *str, char fill, int number)
 {
-	int i;
-	int leng_str;
-	char copy_str[40];
+	int		i;
+	int		leng_str;
+	char	copy_str[40];
 
 	leng_str = ft_strlen(str);
 	copy_str[0] = '\0';
