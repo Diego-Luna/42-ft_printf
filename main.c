@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/22 17:42:55 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/23 11:02:00 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	main(void)
 	// int ii = ft_printf("\n1f: %%%% _ %s _ %i \n", "abcd", 10);
 	// int	i = printf("1p: %%%%%%%% 1 %i .\n", 2);
 	// int ii = ft_printf("1f: %%%%%%%% 1 %i .\n", 2);
-	int	i = printf(" %c ", '0');
-	int ii = ft_printf(" %c ", '0');
+	// int	i = printf("%%%%");
+	int ii = ft_printf("%%%% %s", "123");
 
-	printf("\nValor de i : {%i}", i);
+	// printf("\nValor de i : {%i}", i);
 	printf("\nValor de ii : {%i}", ii);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 10:03:25 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/22 17:49:54 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/23 11:02:15 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,20 @@ int	ft_strchrall(const char *s, char c, t_printf *ob_print)
 	i = 0;
 	num = 0;
 	i_old = 0;
-	// printf("-> {%d}", i_old + 1);
+	// printf("-> all{%d}", i_old + 1);
 	while (s[i])
 	{
 		// if (s[i] == c && ft_check(s[i + 1]) && s[i - 1] != '%')
-		// if (s[i] == c && ft_check(s[i + 1]) && i != (i_old + 1))
+		// if (s[i] == c && ft_check(s[i + 1]) && i > (i_old + 1))
+		// printf("\n--> s[i] == c : {%i: %i}", s[i] == c, ft_check(s[i + 1]));
 		if (s[i] == c && ft_check(s[i + 1]))
 		{
-			// printf("\n 1-> {%d : %d}", ( i != (i_old + 1)), i);
-			if(i == (i_old + 1)){
-				// printf("\non\n");
+			// printf("\n--> if{%i: %i} tes:{%i}", i, i_old, i > (i_old));
+			if (i == 0 || i > (i_old))
+			// if (i != (i_old + 1))
+			{
 				num++;
-				i_old = i;
-				// (void)i_old;
+				i_old = i + 1;
 				ft_add_convers(ob_print, s[i + 1]);
 			}
 		}
