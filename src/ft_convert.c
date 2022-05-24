@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/22 17:13:01 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/24 08:49:34 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,21 @@ void	ft_update_result(t_printf *ob_print, char *str, int counter)
 	i_old = 0;
 	ii = 1;
 	i = ft_strfind(ob_print->result, i, '%', ob_print->convers[counter]);
-	// printf("--> i : counter: {%i : %i}\n", i, counter);
-	// printf("--> i : ob_print->result: {%s}\n", ob_print->result);
 	ft_strtostrn(ob_print->result, str, i);
-	// printf("--> ob_print->result: {%s}\n", ob_print->result);
-	i = ft_strfind(ob_print->str, 0, '%', ob_print->convers[counter]);
-	i_old = i;
-	while (i <= ob_print->position)
+	if (ob_print->str_end == 0)
 	{
-		i = ft_strfind(ob_print->str, i_old + ii, \
-			'%', ob_print->convers[counter]);
-		ii++;
+		i = ft_strfind(ob_print->str, 0, '%', ob_print->convers[counter]);
+		i_old = i;
+		while (i <= ob_print->position)
+		{
+			i = ft_strfind(ob_print->str, i_old + ii, \
+				'%', ob_print->convers[counter]);
+			ii++;
+		}
+		ob_print->position = i;
+		ft_strtostrnn(ob_print->result, ob_print->str, \
+			ft_strlen(ob_print->result), i + 2);
 	}
-	ob_print->position = i;
-	// printf("--> str_i: {%i}\n", i);
-	// printf("--> ob_print->str: {%s}\n", ob_print->str);
-	ft_strtostrnn(ob_print->result, ob_print->str, \
-		ft_strlen(ob_print->result), i + 2);
 }
 // void	ft_update_result(t_printf *ob_print, char *str, int counter)
 // {

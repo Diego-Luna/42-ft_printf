@@ -6,14 +6,12 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/22 08:01:17 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/24 08:25:35 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-// void	ft_result_x(unsigned int arg, t_printf *ob_print, char *val, \
-// 	int counter)
 void	ft_result_x(int arg, t_printf *ob_print, char *val, \
 	int counter)
 {
@@ -33,10 +31,8 @@ void	ft_result_x(int arg, t_printf *ob_print, char *val, \
 		arg *= -1;
 		arg -= 1;
 		ft_inttostrx(arg, str, hex);
-		// ft_fill(str, 'f', 8);
 		ft_fill(str, hex[0], 8);
 	}
-	// ft_flags(ob_print, str, counter);
 	ft_update_result(ob_print, str, counter);
 }
 
