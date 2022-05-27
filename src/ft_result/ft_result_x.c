@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/24 08:25:35 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/27 16:32:49 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,47 @@ void	ft_result_p(unsigned long p, t_printf *ob_print, int counter)
 	char	str1[20];
 	char	str2[15];
 
-	if (p <= 4309661745)
+	// printf("\n--> p {%lu}", p);
+	// printf("\n--> p {%lx}", p);
+
+	ft_inttostrx(p, str2, "0123456789abcdef");
+	// printf("\n--> ft_strlen(str2) {%zu}", ft_strlen(str2));
+	if (ft_strlen(str2) >= 9)
 	{
-		ft_strtostr(str1, "0x100");
+		// printf("\n--> if");
+		ft_strtostr(str1, "0x10");
+	}
+	else if (ft_strlen(str2) >= 4){
+		ft_strtostr(str1, "0x1");
 	}
 	else
 	{
-		ft_strtostr(str1, "0x10");
+		// printf("\n--> else");
+		ft_strtostr(str1, "0x");
 	}
-	ft_inttostrx(p, str2, "0123456789abcdef");
 	ft_strtostrn(str1, str2, ft_strlen(str1));
 	ft_flags(ob_print, str1, counter);
 	ft_update_result(ob_print, str1, counter);
 }
+
+// void	ft_result_p(unsigned long p, t_printf *ob_print, int counter)
+// {
+// 	char	str1[20];
+// 	char	str2[15];
+
+// 	printf("\n--> p {%lu}", p);
+// 	printf("\n--> p {%lx}", p);
+
+// 	if (p <= )
+// 	{
+// 		ft_strtostr(str1, "0x100");
+// 	}
+// 	else
+// 	{
+// 		ft_strtostr(str1, "0x10");
+// 	}
+// 	ft_inttostrx(p, str2, "0123456789abcdef");
+// 	ft_strtostrn(str1, str2, ft_strlen(str1));
+// 	ft_flags(ob_print, str1, counter);
+// 	ft_update_result(ob_print, str1, counter);
+// }

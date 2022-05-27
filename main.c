@@ -6,21 +6,26 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/24 09:02:30 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/27 16:35:13 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "src/ft_printf.h"
 #include <stdio.h>
 
+#include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
+
 int	main(void)
 {
 	// ft_printf("--------------------%%p--------------------\n");
-	int	i = printf("\n1p:  NULL %s NULL ", NULL);
-	int ii = ft_printf("\n1f:  NULL %s NULL ", NULL);
+	int test = -1;
+	int	i = printf("\n1p:  %p ", &test);
+	int ii = ft_printf("\n1f:  %p ", &test);
 
-	printf("\nValor de i : {%i}", i);
-	printf("\nValor de ii : {%i}", ii);
+	printf("\nValor de p : {%i}", i);
+	printf("\nValor de f: {%i}", ii);
 	return (0);
 }
 
