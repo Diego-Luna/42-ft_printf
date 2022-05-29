@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/27 16:35:13 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/05/28 20:30:13 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@
 int	main(void)
 {
 	// ft_printf("--------------------%%p--------------------\n");
-	int test = -1;
-	int	i = printf("\n1p:  %p ", &test);
-	int ii = ft_printf("\n1f:  %p ", &test);
+	// int test = -1;
+	// int	i = printf("\n1p:  %p ", &test);
+	// int ii = ft_printf("\n1f:  %p ", &test);
+	int	i = printf("\np :%c%%", 0);
+	int ii = ft_printf("\nf :%c%%", 0);
 
 	printf("\nValor de p : {%i}", i);
 	printf("\nValor de f: {%i}", ii);
