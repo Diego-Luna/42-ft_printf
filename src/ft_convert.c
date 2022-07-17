@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/27 16:28:02 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/07/17 13:20:42 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_update_result(t_printf *ob_print, char *str, int counter)
 	ii = 1;
 	i = ft_strfind(ob_print->result, i, '%', ob_print->convers[counter]);
 	ft_strtostrn(ob_print->result, str, i);
+	// printf("\n***> ft_strtostrn:{%s}", ob_print->result);
+	// printf("\n***> ob_print->str_end:{%d}", ob_print->str_end);
 	if (ob_print->str_end == 0)
 	{
 		i = ft_strfind(ob_print->str, 0, '%', ob_print->convers[counter]);
