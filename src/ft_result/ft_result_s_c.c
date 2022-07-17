@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:05:24 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/07/17 13:29:13 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/07/17 13:32:37 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_result_s(char	*arg, t_printf *ob_print, int counter)
 void	ft_result_c(int arg, t_printf *ob_print, int counter)
 {
 	char	str[2];
+	// printf("**> valor de:{%i}", arg);
 
 	if (ob_print->str_end == 0 )
 	{
@@ -30,7 +31,7 @@ void	ft_result_c(int arg, t_printf *ob_print, int counter)
 			arg = '0';
 			ob_print->str_end = 1;
 		}
-		if (arg > 32)
+		if (arg >= 31)
 		{
 			str[0] = arg;
 			str[1] = '\0';

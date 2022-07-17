@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/07/17 13:28:05 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/07/17 13:30:37 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@
 int	main(void)
 {
 	// ft_printf("--------------------%%p--------------------\n");
-	int ii = ft_printf("\nf :%c%%", 0);
-	int	i = printf("\np :%c%%", 0);
+	int ii = ft_printf("\nf : %c %c %c ", ' ', ' ', ' ');
+	int	i = printf("\np : %c %c %c ", ' ', ' ', ' ');
+	// int ii = ft_printf("\nf :%c%%", 0);
+	// int	i = printf("\np :%c%%", 0);
 	// int ii = ft_printf("\nf:%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42);
 	// int	i = printf("\np:%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42);
 
