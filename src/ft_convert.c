@@ -6,64 +6,64 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/07/17 13:31:29 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/07/19 12:32:26 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_update_result(t_printf *ob_print, char *str, int counter)
+void ft_update_result(t_printf *ob_print, char *str, int counter)
 {
-	int	i;
-	int	i_old;
-	int	ii;
 
-	i = 0;
-	i_old = 0;
-	ii = 1;
-	i = ft_strfind(ob_print->result, i, '%', ob_print->convers[counter]);
-	ft_strtostrn(ob_print->result, str, i);
-	// printf("\n***> ft_strtostrn:{%s}", ob_print->result);
-	// printf("\n***> ob_print->str_end:{%d}", ob_print->str_end);
+	// printf("\n**> before -> ob_print->i_result:{%i}", ob_print->i_result);
+	// printf("\n**> before -> ob_print->i_str:{%i}", ob_print->i_str);
+	ob_print->i_result = ft_strfind(ob_print->result, ob_print->i_result, '%',
+																	ob_print->convers[counter]);
+	ft_strtostrn(ob_print->result, str, ob_print->i_result);
+	ob_print->i_str = ft_strfind(ob_print->str, ob_print->i_str, '%',
+			ob_print->convers[counter]);
+	ob_print->i_result += 1;
 	if (ob_print->str_end == 0)
 	{
-		i = ft_strfind(ob_print->str, 0, '%', ob_print->convers[counter]);
-		i_old = i;
-		while (i <= ob_print->position)
-		{
-			i = ft_strfind(ob_print->str, i_old + ii, \
-				'%', ob_print->convers[counter]);
-			ii++;
-		}
-		ob_print->position = i;
-		ft_strtostrnn(ob_print->result, ob_print->str, \
-			ft_strlen(ob_print->result), i + 2);
+		ob_print->i_str += 2;
+		ft_strtostrnn(ob_print->result, ob_print->str, ft_strlen(ob_print->result), ob_print->i_str);
 	}
+	// printf("\n**> after -> ob_print->result:{%s}", ob_print->result);
+	// printf("\n**> after -> ob_print->i_result:{%i}", ob_print->i_result);
+	// printf("\n**> after -> ob_print->i_str:{%i}", ob_print->i_str);
+	// printf("\n");
 }
+// version original
 // void	ft_update_result(t_printf *ob_print, char *str, int counter)
 // {
 // 	int	i;
+// 	int	i_old;
 // 	int	ii;
 
 // 	i = 0;
-// 	ii = 0;
-// 	i = ft_strfind(ob_print->result, 0, '%');
+// 	i_old = 0;
+// 	ii = 1;
+// 	i = ft_strfind(ob_print->result, i, '%', ob_print->convers[counter]);
 // 	ft_strtostrn(ob_print->result, str, i);
-// 	i = 0;
-// 	while (counter >= 0)
+// 	if (ob_print->str_end == 0)
 // 	{
-// 		i = ft_strfind(ob_print->str, i + ii, '%');
-// 		ii = 1;
-// 		counter--;
+// 		i = ft_strfind(ob_print->str, 0, '%', ob_print->convers[counter]);
+// 		i_old = i;
+// 		while (i <= ob_print->position)
+// 		{
+// 			i = ft_strfind(ob_print->str, i_old + ii,
+// 				'%', ob_print->convers[counter]);
+// 			ii++;
+// 		}
+// 		ob_print->position = i;
+// 		ft_strtostrnn(ob_print->result, ob_print->str,
+// 			ft_strlen(ob_print->result), i + 2);
 // 	}
-// 	ft_strtostrnn(ob_print->result, ob_print->str,
-// 		ft_strlen(ob_print->result), i + 2);
 // }
 
-//int	ft_convert(va_list arg, t_printf *ob_print, const char *str)
-int	ft_convert(va_list arg, t_printf *ob_print)
+int ft_convert(va_list arg, t_printf *ob_print)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (ob_print->convers[i])

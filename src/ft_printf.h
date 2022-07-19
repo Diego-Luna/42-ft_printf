@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/24 08:32:02 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/07/19 09:41:20 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct s_printf
 	char	result[1000];
 	int		position;
 	int		str_end;
+	int		i_result;
+	int		i_str;
 }	t_printf;
 
 // main

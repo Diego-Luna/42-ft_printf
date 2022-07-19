@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:17:36 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/22 09:46:51 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/07/19 12:19:12 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_strfind(const char *str, int start, char c, char c_2)
 		}
 		start++;
 	}
-	return (0);
+	return (-1);
 }
 
 int	ft_strfin(const char *str, char c)
