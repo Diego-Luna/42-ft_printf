@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 10:30:18 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/07/19 09:41:26 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/07/19 15:37:27 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ int	ft_printf(const char *str, ...)
 	va_end(arg);
 	if (ob_print.str_end == 1)
 	{
+		// printf("\n--> str_end = 1, ft_strlen(ob_print.str):{%zu}, ft_strlen(ob_print.convers):{%zu}{%s}", ft_strlen(ob_print.str), ft_strlen(ob_print.convers), ob_print.convers);
+		// printf("\n--> ft_strlen(ob_print.convers):{%zu}", ft_strlen(ob_print.convers));
 		return (ft_strlen(ob_print.str) - ft_strlen(ob_print.convers));
 	}
+	// printf("\n--> no if, ft_strlen(ob_print.str):{%zu}", ft_strlen(ob_print.str));
 	return (ft_strlen(ob_print.result));
 }

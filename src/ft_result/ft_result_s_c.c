@@ -6,7 +6,7 @@
 /*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:05:24 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/07/17 13:32:37 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/07/19 13:28:54 by diegofranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	ft_result_c(int arg, t_printf *ob_print, int counter)
 		{
 			str[0] = arg;
 			str[1] = '\0';
+			ob_print->str_end = 0;
 		}
 		else
 		{
