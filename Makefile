@@ -32,3 +32,6 @@ fclean:	clean
 		${RM} ${NAME}
 
 re:		fclean all
+
+bonus: ${OBJS}
+		ar rcs ${NAME} ${OBJS}
