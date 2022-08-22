@@ -6,16 +6,42 @@
 /*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 10:30:18 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/08/21 19:03:19 by anacamilalu      ###   ########.fr       */
+/*   Updated: 2022/08/22 18:23:11 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+int ft_check_c(t_printf *ob_print)
 {
-	va_list		arg;
-	t_printf	ob_print;
+	int i;
+	int retult;
+
+	retult = 0;
+	if (!(ft_strlen(ob_print->convers)))
+	{
+		return (0);
+	}
+	i = ft_strfin(ob_print->convers, 'c');
+
+	if (ob_print->convers[i] == 'c')
+	{
+		return (0);
+	}
+
+	while (ob_print->convers[i] == 'c')
+	{
+		i++;
+		retult++;
+	}
+
+	return (retult);
+}
+
+int ft_printf(const char *str, ...)
+{
+	va_list arg;
+	t_printf ob_print;
 
 	ob_print.i_str = 0;
 	ob_print.i_result = 0;
@@ -39,13 +65,14 @@ int	ft_printf(const char *str, ...)
 	}
 	ft_putstr_fd(ob_print.result, 1);
 	va_end(arg);
-	if (ob_print.str_end == 1)
+
+	if (ob_print.str_end == 2)
 	{
-		// printf("\n--> str_end = 1, ft_strlen(ob_print.str):{%zu}, ft_strlen(ob_print.convers):{%zu}{%s}", ft_strlen(ob_print.str), ft_strlen(ob_print.convers), ob_print.convers);
-		printf("\n--> str_end = 1, ft_strlen(ob_print.str):{%zu}, ft_strlen(ob_print.convers):{%zu}{%s}", ft_strlen(ob_print.result), ft_strlen(ob_print.convers), ob_print.convers);
-		// printf("\n--> ft_strlen(ob_print.convers):{%zu}", ft_strlen(ob_print.convers));
+		// printf("\n--> Ft_strlen(ob_print.str):{%zu}, ft_strlen(ob_print.convers):{%zu}{%s}, ft_strlen(ob_print.result):{%zu}", ft_strlen(ob_print.str), ft_strlen(ob_print.convers), ob_print.convers, ft_strlen(ob_print.result));
+
+		return (ft_strlen(ob_print.result) + ft_check_c(&ob_print));
 		// return (ft_strlen(ob_print.str) - ft_strlen(ob_print.convers));
-		return (ft_strlen(ob_print.result) + (2));
+		// return (ft_strlen(ob_print.result) + ft_strlen(ob_print.convers));
 	}
 	// printf("\n--> no if, ft_strlen(ob_print.str):{%zu}", ft_strlen(ob_print.str));
 	return (ft_strlen(ob_print.result));

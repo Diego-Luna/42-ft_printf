@@ -6,7 +6,7 @@
 /*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/08/21 19:22:09 by anacamilalu      ###   ########.fr       */
+/*   Updated: 2022/08/22 18:46:54 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void ft_update_result(t_printf *ob_print, char *str, int counter)
 	// ob_print->i_str = ft_strfind(ob_print->str, ob_print->i_str, '%',
 	// 							 ob_print->convers[counter]);
 	// ob_print->i_result += 1;
-	if (ob_print->str_end == 0)
+	if (ob_print->str_end == 0 || ob_print->str_end == 1)
 	{
 		ft_strtostrn(ob_print->result, str, ob_print->i_result);
 		ob_print->i_str = ft_strfind(ob_print->str, ob_print->i_str, '%',
@@ -31,6 +31,11 @@ void ft_update_result(t_printf *ob_print, char *str, int counter)
 		ob_print->i_result += 1;
 		ob_print->i_str += 2;
 		ft_strtostrnn(ob_print->result, ob_print->str, ft_strlen(ob_print->result), ob_print->i_str);
+	}
+	if (ob_print->str_end == 1)
+	{
+		printf("\n!!> str_end= 2\n");
+		ob_print->str_end = 2;
 	}
 	// printf("\n**> after -> ob_print->result:{%s}", ob_print->result);
 	// printf("\n**> after -> ob_print->i_result:{%i}", ob_print->i_result);
