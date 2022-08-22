@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
+/*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/07/19 12:32:26 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/08/21 19:22:09 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@ void ft_update_result(t_printf *ob_print, char *str, int counter)
 	// printf("\n**> before -> ob_print->i_result:{%i}", ob_print->i_result);
 	// printf("\n**> before -> ob_print->i_str:{%i}", ob_print->i_str);
 	ob_print->i_result = ft_strfind(ob_print->result, ob_print->i_result, '%',
-																	ob_print->convers[counter]);
-	ft_strtostrn(ob_print->result, str, ob_print->i_result);
-	ob_print->i_str = ft_strfind(ob_print->str, ob_print->i_str, '%',
-			ob_print->convers[counter]);
-	ob_print->i_result += 1;
+									ob_print->convers[counter]);
+	// ft_strtostrn(ob_print->result, str, ob_print->i_result);
+	// ob_print->i_str = ft_strfind(ob_print->str, ob_print->i_str, '%',
+	// 							 ob_print->convers[counter]);
+	// ob_print->i_result += 1;
 	if (ob_print->str_end == 0)
 	{
+		ft_strtostrn(ob_print->result, str, ob_print->i_result);
+		ob_print->i_str = ft_strfind(ob_print->str, ob_print->i_str, '%',
+									 ob_print->convers[counter]);
+		ob_print->i_result += 1;
 		ob_print->i_str += 2;
 		ft_strtostrnn(ob_print->result, ob_print->str, ft_strlen(ob_print->result), ob_print->i_str);
 	}
