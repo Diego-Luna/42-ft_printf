@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
+/*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:06:55 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/07/19 15:37:20 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/08/22 19:40:21 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ int	main(void)
 	// int	i = printf("\np: %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42);
 	// int ii = ft_printf("\nf: %X%%%% %c%%", 42, 0);
 	// int	i = printf("\np: %X%%%% %c%%", 42, 0);
-	int ii = ft_printf("\nf:  %c %c %c ", 0, '1', '2');
-	int	i = printf("\np:  %c %c %c ", 0, '1', '2');
+	// int ii = ft_printf("\nf:  %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%", 'C', "0", 0, 0 ,0 ,0, 42);
+	// int	i = printf("\np:  %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%", 'C', "0", 0, 0 ,0 ,0, 42);
+	int ii = ft_printf("\nf:  %c %c %c ", '0', 0, '1');
+	int	i = printf("\np:  %c %c %c ", '0', 0, '1');
 
 	printf("\nValor de p :{%i}", i);
 	printf("\nValor de f :{%i}", ii);
