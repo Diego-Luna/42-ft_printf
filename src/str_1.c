@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
+/*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:17:36 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/07/19 12:19:12 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/08/22 19:54:10 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,23 @@ int	ft_findc(const char *str, int start, char c)
 		start++;
 	}
 	return (0);
+}
+int	ft_findc_next_same(const char *str, int start, char c)
+{
+	int i;
+
+	i = 0;
+	while (str[start])
+	{
+		if (str[start] == c)
+		{
+			start++;
+			i++;
+		}else{
+			return (i);
+		}
+	}
+	return (-1);
 }
 
 int	ft_strfind(const char *str, int start, char c, char c_2)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
+/*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:23:59 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/07/19 09:41:20 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/08/22 19:54:42 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	ft_inttostrx(int nb, char *str, char *val);
 // int		ft_strfind(const char *str, int start, char c);
 int		ft_strfind(const char *str, int start, char c, char c_2);
 int		ft_findc(const char *str, int start, char c);
+int		ft_findc_next_same(const char *str, int start, char c);
 int		ft_strfin_end(const char *str, char c, int end);
 void	ft_strtostrnf(char *str1, const char *str2, int n);
 void	ft_strtostrn(char *str1, const char *str2, int start);
