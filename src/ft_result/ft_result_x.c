@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_result_x.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
+/*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:07:06 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/07/17 13:20:38 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/08/24 14:00:01 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,8 @@ void	ft_result_sign(t_printf *ob_print, int counter)
 
 	str[0] = '%';
 	str[1] = '\0';
-
-	// printf("\n***> result de %%:{%s}", ob_print->result);
-	// printf("\n***> str de %%:{%s}", ob_print->str);
-
 	ft_flags(ob_print, str, counter);
 	ft_update_result(ob_print, str, counter);
-	// printf("\n***> despues de %%:{%s}", ob_print->result);
 }
 
 void	ft_result_p(unsigned long p, t_printf *ob_print, int counter)
@@ -56,22 +51,17 @@ void	ft_result_p(unsigned long p, t_printf *ob_print, int counter)
 	char	str1[20];
 	char	str2[15];
 
-	// printf("\n--> p {%lu}", p);
-	// printf("\n--> p {%lx}", p);
-
 	ft_inttostrx(p, str2, "0123456789abcdef");
-	// printf("\n--> ft_strlen(str2) {%zu}", ft_strlen(str2));
 	if (ft_strlen(str2) >= 9)
 	{
-		// printf("\n--> if");
 		ft_strtostr(str1, "0x10");
 	}
-	else if (ft_strlen(str2) >= 4){
+	else if (ft_strlen(str2) >= 4)
+	{
 		ft_strtostr(str1, "0x1");
 	}
 	else
 	{
-		// printf("\n--> else");
 		ft_strtostr(str1, "0x");
 	}
 	ft_strtostrn(str1, str2, ft_strlen(str1));
