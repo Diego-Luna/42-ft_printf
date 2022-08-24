@@ -6,7 +6,7 @@
 /*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:05:24 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/08/22 18:55:54 by anacamilalu      ###   ########.fr       */
+/*   Updated: 2022/08/23 19:43:54 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void ft_result_s(char *arg, t_printf *ob_print, int counter)
 {
+	if (arg == NULL){
+		arg = "(null)";
+	}
 	ft_flags(ob_print, arg, counter);
 	ft_update_result(ob_print, arg, counter);
 }
