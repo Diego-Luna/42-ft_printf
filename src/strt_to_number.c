@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   strt_to_number.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegofranciscolunalopez <diegofrancisco    +#+  +:+       +#+        */
+/*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 18:59:44 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/05/20 09:20:22 by diegofranci      ###   ########.fr       */
+/*   Updated: 2022/08/24 13:52:27 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_inttostr(int nb, char *str)
 void	ft_inttostrx(int nb, char *str, char *val)
 {
 	int	leng;
-	int leng_val;
+	int	leng_val;
 
 	leng_val = ft_strlen(val) - 1;
 	if (nb > leng_val)

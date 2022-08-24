@@ -6,43 +6,33 @@
 /*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:37:50 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/08/23 19:26:56 by anacamilalu      ###   ########.fr       */
+/*   Updated: 2022/08/24 13:41:15 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_update_result(t_printf *ob_print, char *str, int counter)
+void	ft_update_result(t_printf *ob_print, char *str, int counter)
 {
-
-	// printf("\n**> before -> ob_print->i_result:{%i}", ob_print->i_result);
-	// printf("\n**> before -> ob_print->i_str:{%i}", ob_print->i_str);
 	ob_print->i_result = ft_strfind(ob_print->result, ob_print->i_result, '%',
-									ob_print->convers[counter]);
-	// ft_strtostrn(ob_print->result, str, ob_print->i_result);
-	// ob_print->i_str = ft_strfind(ob_print->str, ob_print->i_str, '%',
-	// 							 ob_print->convers[counter]);
-	// ob_print->i_result += 1;
+			ob_print->convers[counter]);
 	if (ob_print->str_end == 0 || ob_print->str_end == 1)
 	{
 		ft_strtostrn(ob_print->result, str, ob_print->i_result);
 		ob_print->i_str = ft_strfind(ob_print->str, ob_print->i_str, '%',
-									 ob_print->convers[counter]);
+				ob_print->convers[counter]);
 		if (ob_print->str_end == 0)
 		{
 			ob_print->i_result += 1;
 			ob_print->i_str += 2;
-			ft_strtostrnn(ob_print->result, ob_print->str, ft_strlen(ob_print->result), ob_print->i_str);
+			ft_strtostrnn(ob_print->result, ob_print->str,
+				ft_strlen(ob_print->result), ob_print->i_str);
 		}
 	}
 	if (ob_print->str_end == 1)
 	{
 		ob_print->str_end = 2;
 	}
-	// printf("\n**> after -> ob_print->result:{%s}", ob_print->result);
-	// printf("\n**> after -> ob_print->i_result:{%i}", ob_print->i_result);
-	// printf("\n**> after -> ob_print->i_str:{%i}", ob_print->i_str);
-	// printf("\n");
 }
 // version original
 // void	ft_update_result(t_printf *ob_print, char *str, int counter)
@@ -72,9 +62,9 @@ void ft_update_result(t_printf *ob_print, char *str, int counter)
 // 	}
 // }
 
-int ft_convert(va_list arg, t_printf *ob_print)
+int	ft_convert(va_list arg, t_printf *ob_print)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (ob_print->convers[i])
@@ -94,7 +84,6 @@ int ft_convert(va_list arg, t_printf *ob_print)
 		if (ob_print->convers[i] == '%')
 			ft_result_sign(ob_print, i);
 		if (ob_print->convers[i] == 'p')
-			// ft_result_p(va_arg(arg, unsigned long), ob_print, i);
 			ft_result_p((unsigned long)va_arg(arg, void *), ob_print, i);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:17:36 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/08/22 19:54:10 by anacamilalu      ###   ########.fr       */
+/*   Updated: 2022/08/24 13:47:33 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ int	ft_findc(const char *str, int start, char c)
 	}
 	return (0);
 }
+
 int	ft_findc_next_same(const char *str, int start, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[start])
@@ -35,7 +36,9 @@ int	ft_findc_next_same(const char *str, int start, char c)
 		{
 			start++;
 			i++;
-		}else{
+		}
+		else
+		{
 			return (i);
 		}
 	}
@@ -46,7 +49,6 @@ int	ft_strfind(const char *str, int start, char c, char c_2)
 {
 	while (str[start])
 	{
-		// if (str[start] == c && ft_check(str[start + 1]))
 		if (str[start] == c && str[start + 1] == c_2)
 		{
 			return (start);
@@ -90,17 +92,4 @@ int	ft_strfin_end(const char *str, char c, int end)
 		i++;
 	}
 	return (ii);
-}
-
-void	ft_strtostr(char *str1, const char *str2)
-{
-	int	i;
-
-	i = 0;
-	while (str2[i])
-	{
-		str1[i] = str2[i];
-		i++;
-	}
-	str1[i] = '\0';
 }
