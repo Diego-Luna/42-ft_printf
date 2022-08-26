@@ -6,7 +6,7 @@
 /*   By: anacamilalunalopez <anacamilalunalopez@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 20:17:36 by diegofranci       #+#    #+#             */
-/*   Updated: 2022/08/24 13:47:33 by anacamilalu      ###   ########.fr       */
+/*   Updated: 2022/08/24 15:11:56 by anacamilalu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_findc(const char *str, int start, char c)
 		}
 		start++;
 	}
-	return (0);
+	return (-1);
 }
 
 int	ft_findc_next_same(const char *str, int start, char c)
